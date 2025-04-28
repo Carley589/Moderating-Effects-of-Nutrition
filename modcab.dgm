@@ -1,0 +1,155 @@
+VERSION 1.1.0
+INPUT
+TITLE:
+ Moderating Effects of Nutrition on the Relationship Between
+Adverse Childhood Experiences and Health Related Quality of Life
+MODCAB;
+
+DATA:
+ FILE = BRFSS2021.txt;
+VARIABLE:
+NAMES = ACES C_ABUSE H_DYSF NUTREC HRQOL MODERATOR
+EDUCA RACE GENDER AGE
+PSU STSTR STRWT LLCPWT;
+USEVARIABLES = C_ABUSE NUTREC HRQOL MODERATOR
+EDUCA RACE GENDER AGE;
+MISSING = ALL (-999);
+CATEGORICAL = HRQOL;
+WEIGHT = LLCPWT;
+STRATIFICATION = STSTR;
+CLUSTER = PSU;
+ANALYSIS:
+ TYPE = COMPLEX;
+OUTPUT:
+ STANDARDIZED;
+MODEL:
+HRQOL ON C_ABUSE NUTREC MODERATOR EDUCA RACE GENDER AGE;
+INPUT_END
+2
+2
+2
+2
+WLSMV
+1
+GENERAL
+0
+1
+0
+7
+hrqol c_abuse nutrec moderator educa race gender age
+2
+1 0 0 0 0 0 0 0
+0
+0
+1 1 c_abuse hrqol   -0.294    0.020
+1 1 nutrec hrqol    0.234    0.113
+1 1 moderator hrqol   -0.059    0.049
+1 1 educa hrqol    0.192    0.010
+1 1 race hrqol    0.013    0.013
+1 1 gender hrqol   -0.187    0.020
+1 1 age hrqol   -0.025    0.006
+2 1 c_abuse nutrec  999.000  999.000
+2 1 c_abuse moderator  999.000  999.000
+2 1 c_abuse educa  999.000  999.000
+2 1 c_abuse race  999.000  999.000
+2 1 c_abuse gender  999.000  999.000
+2 1 c_abuse age  999.000  999.000
+2 1 nutrec moderator  999.000  999.000
+2 1 nutrec educa  999.000  999.000
+2 1 nutrec race  999.000  999.000
+2 1 nutrec gender  999.000  999.000
+2 1 nutrec age  999.000  999.000
+2 1 moderator educa  999.000  999.000
+2 1 moderator race  999.000  999.000
+2 1 moderator gender  999.000  999.000
+2 1 moderator age  999.000  999.000
+2 1 educa race  999.000  999.000
+2 1 educa gender  999.000  999.000
+2 1 educa age  999.000  999.000
+2 1 race gender  999.000  999.000
+2 1 race age  999.000  999.000
+2 1 gender age  999.000  999.000
+11 1 c_abuse hrqol   -0.139    0.009
+11 1 nutrec hrqol    0.046    0.022
+11 1 moderator hrqol   -0.026    0.022
+11 1 educa hrqol    0.194    0.010
+11 1 race hrqol    0.011    0.011
+11 1 gender hrqol   -0.090    0.010
+11 1 age hrqol   -0.041    0.010
+12 1 c_abuse nutrec  999.000  999.000
+12 1 c_abuse moderator  999.000  999.000
+12 1 c_abuse educa  999.000  999.000
+12 1 c_abuse race  999.000  999.000
+12 1 c_abuse gender  999.000  999.000
+12 1 c_abuse age  999.000  999.000
+12 1 nutrec moderator  999.000  999.000
+12 1 nutrec educa  999.000  999.000
+12 1 nutrec race  999.000  999.000
+12 1 nutrec gender  999.000  999.000
+12 1 nutrec age  999.000  999.000
+12 1 moderator educa  999.000  999.000
+12 1 moderator race  999.000  999.000
+12 1 moderator gender  999.000  999.000
+12 1 moderator age  999.000  999.000
+12 1 educa race  999.000  999.000
+12 1 educa gender  999.000  999.000
+12 1 educa age  999.000  999.000
+12 1 race gender  999.000  999.000
+12 1 race age  999.000  999.000
+12 1 gender age  999.000  999.000
+21 1 c_abuse hrqol   -0.284    0.019
+21 1 nutrec hrqol    0.226    0.109
+21 1 moderator hrqol   -0.057    0.048
+21 1 educa hrqol    0.185    0.009
+21 1 race hrqol    0.013    0.012
+21 1 gender hrqol   -0.181    0.019
+21 1 age hrqol   -0.024    0.006
+22 1 c_abuse nutrec  999.000  999.000
+22 1 c_abuse moderator  999.000  999.000
+22 1 c_abuse educa  999.000  999.000
+22 1 c_abuse race  999.000  999.000
+22 1 c_abuse gender  999.000  999.000
+22 1 c_abuse age  999.000  999.000
+22 1 nutrec moderator  999.000  999.000
+22 1 nutrec educa  999.000  999.000
+22 1 nutrec race  999.000  999.000
+22 1 nutrec gender  999.000  999.000
+22 1 nutrec age  999.000  999.000
+22 1 moderator educa  999.000  999.000
+22 1 moderator race  999.000  999.000
+22 1 moderator gender  999.000  999.000
+22 1 moderator age  999.000  999.000
+22 1 educa race  999.000  999.000
+22 1 educa gender  999.000  999.000
+22 1 educa age  999.000  999.000
+22 1 race gender  999.000  999.000
+22 1 race age  999.000  999.000
+22 1 gender age  999.000  999.000
+31 1 c_abuse hrqol   -0.294    0.020
+31 1 nutrec hrqol    0.234    0.113
+31 1 moderator hrqol   -0.059    0.049
+31 1 educa hrqol    0.192    0.010
+31 1 race hrqol    0.013    0.013
+31 1 gender hrqol   -0.187    0.020
+31 1 age hrqol   -0.025    0.006
+32 1 c_abuse nutrec  999.000  999.000
+32 1 c_abuse moderator  999.000  999.000
+32 1 c_abuse educa  999.000  999.000
+32 1 c_abuse race  999.000  999.000
+32 1 c_abuse gender  999.000  999.000
+32 1 c_abuse age  999.000  999.000
+32 1 nutrec moderator  999.000  999.000
+32 1 nutrec educa  999.000  999.000
+32 1 nutrec race  999.000  999.000
+32 1 nutrec gender  999.000  999.000
+32 1 nutrec age  999.000  999.000
+32 1 moderator educa  999.000  999.000
+32 1 moderator race  999.000  999.000
+32 1 moderator gender  999.000  999.000
+32 1 moderator age  999.000  999.000
+32 1 educa race  999.000  999.000
+32 1 educa gender  999.000  999.000
+32 1 educa age  999.000  999.000
+32 1 race gender  999.000  999.000
+32 1 race age  999.000  999.000
+32 1 gender age  999.000  999.000

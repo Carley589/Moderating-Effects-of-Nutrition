@@ -1,0 +1,155 @@
+VERSION 1.1.0
+INPUT
+TITLE:
+ Moderating Effects of Nutrition on the Relationship Between
+Adverse Childhood Experiences and Health Related Quality of Life
+MODACE;
+
+DATA:
+ FILE = BRFSS2021.txt;
+VARIABLE:
+NAMES = ACES C_ABUSE H_DYSF NUTREC HRQOL MODERATOR
+EDUCA RACE GENDER AGE
+PSU STSTR STRWT LLCPWT;
+USEVARIABLES = ACES NUTREC HRQOL MODERATOR
+EDUCA RACE GENDER AGE;
+MISSING = ALL (-999);
+CATEGORICAL = HRQOL;
+WEIGHT = LLCPWT;
+STRATIFICATION = STSTR;
+CLUSTER = PSU;
+ANALYSIS:
+ TYPE = COMPLEX;
+OUTPUT:
+ STANDARDIZED;
+MODEL:
+HRQOL ON ACES NUTREC MODERATOR EDUCA RACE GENDER AGE;
+INPUT_END
+2
+2
+2
+2
+WLSMV
+1
+GENERAL
+0
+1
+0
+7
+hrqol aces nutrec moderator educa race gender age
+2
+1 0 0 0 0 0 0 0
+0
+0
+1 1 aces hrqol   -0.250    0.014
+1 1 nutrec hrqol   -0.007    0.116
+1 1 moderator hrqol    0.042    0.050
+1 1 educa hrqol    0.178    0.011
+1 1 race hrqol    0.004    0.015
+1 1 gender hrqol   -0.185    0.022
+1 1 age hrqol   -0.045    0.007
+2 1 aces nutrec  999.000  999.000
+2 1 aces moderator  999.000  999.000
+2 1 aces educa  999.000  999.000
+2 1 aces race  999.000  999.000
+2 1 aces gender  999.000  999.000
+2 1 aces age  999.000  999.000
+2 1 nutrec moderator  999.000  999.000
+2 1 nutrec educa  999.000  999.000
+2 1 nutrec race  999.000  999.000
+2 1 nutrec gender  999.000  999.000
+2 1 nutrec age  999.000  999.000
+2 1 moderator educa  999.000  999.000
+2 1 moderator race  999.000  999.000
+2 1 moderator gender  999.000  999.000
+2 1 moderator age  999.000  999.000
+2 1 educa race  999.000  999.000
+2 1 educa gender  999.000  999.000
+2 1 educa age  999.000  999.000
+2 1 race gender  999.000  999.000
+2 1 race age  999.000  999.000
+2 1 gender age  999.000  999.000
+11 1 aces hrqol   -0.201    0.011
+11 1 nutrec hrqol   -0.002    0.025
+11 1 moderator hrqol    0.021    0.025
+11 1 educa hrqol    0.177    0.011
+11 1 race hrqol    0.003    0.012
+11 1 gender hrqol   -0.089    0.011
+11 1 age hrqol   -0.074    0.012
+12 1 aces nutrec  999.000  999.000
+12 1 aces moderator  999.000  999.000
+12 1 aces educa  999.000  999.000
+12 1 aces race  999.000  999.000
+12 1 aces gender  999.000  999.000
+12 1 aces age  999.000  999.000
+12 1 nutrec moderator  999.000  999.000
+12 1 nutrec educa  999.000  999.000
+12 1 nutrec race  999.000  999.000
+12 1 nutrec gender  999.000  999.000
+12 1 nutrec age  999.000  999.000
+12 1 moderator educa  999.000  999.000
+12 1 moderator race  999.000  999.000
+12 1 moderator gender  999.000  999.000
+12 1 moderator age  999.000  999.000
+12 1 educa race  999.000  999.000
+12 1 educa gender  999.000  999.000
+12 1 educa age  999.000  999.000
+12 1 race gender  999.000  999.000
+12 1 race age  999.000  999.000
+12 1 gender age  999.000  999.000
+21 1 aces hrqol   -0.240    0.013
+21 1 nutrec hrqol   -0.007    0.111
+21 1 moderator hrqol    0.041    0.048
+21 1 educa hrqol    0.171    0.011
+21 1 race hrqol    0.004    0.014
+21 1 gender hrqol   -0.178    0.021
+21 1 age hrqol   -0.043    0.007
+22 1 aces nutrec  999.000  999.000
+22 1 aces moderator  999.000  999.000
+22 1 aces educa  999.000  999.000
+22 1 aces race  999.000  999.000
+22 1 aces gender  999.000  999.000
+22 1 aces age  999.000  999.000
+22 1 nutrec moderator  999.000  999.000
+22 1 nutrec educa  999.000  999.000
+22 1 nutrec race  999.000  999.000
+22 1 nutrec gender  999.000  999.000
+22 1 nutrec age  999.000  999.000
+22 1 moderator educa  999.000  999.000
+22 1 moderator race  999.000  999.000
+22 1 moderator gender  999.000  999.000
+22 1 moderator age  999.000  999.000
+22 1 educa race  999.000  999.000
+22 1 educa gender  999.000  999.000
+22 1 educa age  999.000  999.000
+22 1 race gender  999.000  999.000
+22 1 race age  999.000  999.000
+22 1 gender age  999.000  999.000
+31 1 aces hrqol   -0.250    0.014
+31 1 nutrec hrqol   -0.007    0.116
+31 1 moderator hrqol    0.042    0.050
+31 1 educa hrqol    0.178    0.011
+31 1 race hrqol    0.004    0.015
+31 1 gender hrqol   -0.185    0.022
+31 1 age hrqol   -0.045    0.007
+32 1 aces nutrec  999.000  999.000
+32 1 aces moderator  999.000  999.000
+32 1 aces educa  999.000  999.000
+32 1 aces race  999.000  999.000
+32 1 aces gender  999.000  999.000
+32 1 aces age  999.000  999.000
+32 1 nutrec moderator  999.000  999.000
+32 1 nutrec educa  999.000  999.000
+32 1 nutrec race  999.000  999.000
+32 1 nutrec gender  999.000  999.000
+32 1 nutrec age  999.000  999.000
+32 1 moderator educa  999.000  999.000
+32 1 moderator race  999.000  999.000
+32 1 moderator gender  999.000  999.000
+32 1 moderator age  999.000  999.000
+32 1 educa race  999.000  999.000
+32 1 educa gender  999.000  999.000
+32 1 educa age  999.000  999.000
+32 1 race gender  999.000  999.000
+32 1 race age  999.000  999.000
+32 1 gender age  999.000  999.000

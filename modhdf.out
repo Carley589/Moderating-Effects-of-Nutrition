@@ -1,0 +1,314 @@
+Mplus VERSION 8.3
+MUTHEN & MUTHEN
+04/27/2023   1:55 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Moderating Effects of Nutrition on the Relationship Between
+  Adverse Childhood Experiences and Health Related Quality of Life
+  MODHDF;
+
+  DATA: FILE = BRFSS2021.txt;
+
+  VARIABLE:
+  NAMES = ACES C_ABUSE H_DYSF NUTREC HRQOL MODERATOR
+  EDUCA RACE GENDER AGE
+  PSU STSTR STRWT LLCPWT;
+
+
+  USEVARIABLES = H_DYSF NUTREC HRQOL MODERATOR
+  EDUCA RACE GENDER AGE;
+  MISSING = ALL (-999);
+
+  CATEGORICAL = HRQOL;
+
+  WEIGHT = LLCPWT;
+
+  STRATIFICATION = STSTR;
+
+  CLUSTER = PSU;
+
+  ANALYSIS: TYPE = COMPLEX;
+
+  MODEL:
+  HRQOL ON H_DYSF NUTREC MODERATOR EDUCA RACE GENDER AGE;
+
+  OUTPUT: STANDARDIZED;
+
+
+
+*** WARNING in VARIABLE command
+  Note that only the first 8 characters of variable names are used in the output.
+  Shorten variable names to avoid any confusion.
+*** WARNING
+  Clusters with the same IDs have been found in different strata.  These
+  clusters are assumed to be different because clusters are not allowed
+  to appear in more than one stratum.
+*** WARNING
+  Data set contains cases with missing on x-variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on x-variables:  2304
+   3 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+Moderating Effects of Nutrition on the Relationship Between
+Adverse Childhood Experiences and Health Related Quality of Life
+MODHDF;
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                       68327
+
+Number of dependent variables                                    1
+Number of independent variables                                  7
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Binary and ordered categorical (ordinal)
+   HRQOL
+
+Observed independent variables
+   H_DYSF      NUTREC      MODERATO    EDUCA       RACE        GENDER
+   AGE
+
+Variables with special functions
+
+  Stratification        STSTR
+  Cluster variable      PSU
+  Weight variable       LLCPWT
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Parameterization                                             DELTA
+Link                                                        PROBIT
+
+Input data file(s)
+  BRFSS2021.txt
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns             1
+     Number of strata                          399
+     Number of clusters                      68327
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              HRQOL
+              ________
+ HRQOL          1.000
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    HRQOL
+      Category 1    0.136         9275.160
+      Category 2    0.864        59051.840
+
+
+
+UNIVARIATE SAMPLE STATISTICS
+
+
+     UNIVARIATE HIGHER-ORDER MOMENT DESCRIPTIVE STATISTICS
+
+         Variable/         Mean/     Skewness/   Minimum/ % with                Percentiles
+        Sample Size      Variance    Kurtosis    Maximum  Min/Max      20%/60%    40%/80%    Median
+
+     H_DYSF                0.419       0.328       0.000   62.06%       0.000      0.000      0.000
+           68327.000       0.243      -1.892       1.000   37.94%       0.000      1.000
+     NUTREC                0.044       4.466       0.000   94.95%       0.000      0.000      0.000
+           68327.000       0.042      17.942       1.000    5.05%       0.000      0.000
+     MODERATOR             0.091       5.388       0.000   94.95%       0.000      0.000      0.000
+           68327.000       0.213      28.742       3.000    1.81%       0.000      0.000
+     EDUCA                 4.742      -0.558       1.000    0.08%       4.000      5.000      5.000
+           68327.000       1.099      -0.154       6.000   38.91%       5.000      6.000
+     RACE                  1.504       1.683       1.000   79.66%       1.000      1.000      1.000
+           68327.000       0.795       1.653       4.000    5.05%       1.000      2.000
+     GENDER                1.514      -0.056       1.000   45.34%       1.000      1.000      2.000
+           68327.000       0.250      -1.997       2.000   54.66%       2.000      2.000
+     AGE                   3.773      -0.140       1.000    5.49%       3.000      4.000      5.000
+           68327.000       2.961      -1.294       6.000   40.60%       6.000      6.000
+
+
+     WARNING:  THE VARIANCE CONTRIBUTION FROM A STRATUM WITH A SINGLE CLUSTER
+     (PSU) IS BASED ON THE DIFFERENCE BETWEEN THE SINGLE CLUSTER VALUE AND
+     THE OVERALL CLUSTER MEAN.
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                        8
+
+Chi-Square Test of Model Fit
+
+          Value                              0.000*
+          Degrees of Freedom                     0
+          P-Value                           0.0000
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.000
+          90 Percent C.I.                    0.000  0.000
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                1.000
+          TLI                                1.000
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                            653.374
+          Degrees of Freedom                     7
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.000
+
+Optimum Function Value for Weighted Least-Squares Estimator
+
+          Value                     0.16289745D-09
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ HRQOL    ON
+    H_DYSF            -0.290      0.020    -14.227      0.000
+    NUTREC             0.322      0.111      2.893      0.004
+    MODERATOR         -0.096      0.049     -1.968      0.049
+    EDUCA              0.184      0.010     18.281      0.000
+    RACE               0.009      0.013      0.687      0.492
+    GENDER            -0.181      0.020     -9.024      0.000
+    AGE               -0.030      0.006     -4.739      0.000
+
+ Thresholds
+    HRQOL$1           -0.757      0.071    -10.725      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ HRQOL    ON
+    H_DYSF            -0.138      0.010    -14.473      0.000
+    NUTREC             0.064      0.022      2.894      0.004
+    MODERATOR         -0.043      0.022     -1.968      0.049
+    EDUCA              0.186      0.010     18.887      0.000
+    RACE               0.008      0.011      0.687      0.492
+    GENDER            -0.087      0.010     -9.084      0.000
+    AGE               -0.050      0.011     -4.748      0.000
+
+ Thresholds
+    HRQOL$1           -0.731      0.069    -10.652      0.000
+
+
+STDY Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ HRQOL    ON
+    H_DYSF            -0.280      0.019    -14.483      0.000
+    NUTREC             0.311      0.107      2.894      0.004
+    MODERATOR         -0.092      0.047     -1.968      0.049
+    EDUCA              0.178      0.009     18.910      0.000
+    RACE               0.009      0.012      0.687      0.492
+    GENDER            -0.175      0.019     -9.086      0.000
+    AGE               -0.029      0.006     -4.749      0.000
+
+ Thresholds
+    HRQOL$1           -0.731      0.069    -10.652      0.000
+
+
+STD Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ HRQOL    ON
+    H_DYSF            -0.290      0.020    -14.227      0.000
+    NUTREC             0.322      0.111      2.893      0.004
+    MODERATOR         -0.096      0.049     -1.968      0.049
+    EDUCA              0.184      0.010     18.281      0.000
+    RACE               0.009      0.013      0.687      0.492
+    GENDER            -0.181      0.020     -9.024      0.000
+    AGE               -0.030      0.006     -4.739      0.000
+
+ Thresholds
+    HRQOL$1           -0.757      0.071    -10.725      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed   Residual
+    Variable        Estimate       S.E.  Est./S.E.    P-Value    Variance
+
+    HRQOL              0.066      0.005     14.065      0.000      1.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.326E-02
+       (ratio of smallest to largest eigenvalue)
+
+
+DIAGRAM INFORMATION
+
+  Use View Diagram under the Diagram menu in the Mplus Editor to view the diagram.
+  If running Mplus from the Mplus Diagrammer, the diagram opens automatically.
+
+  Diagram output
+    \\apporto.com\dfs\unco\users\brow8740_unco\documents\modhdf.dgm
+
+     Beginning Time:  13:55:38
+        Ending Time:  13:56:00
+       Elapsed Time:  00:00:22
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2019 Muthen & Muthen
