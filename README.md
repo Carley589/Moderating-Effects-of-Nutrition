@@ -8,11 +8,12 @@ This study examined whether nutrition moderates the relationship between adverse
 
 Here are the key files included in this repository:
 
-- [MODHDF.inp](path/to/MODHDF.inp)
-- [ModACE.inp](path/to/ModACE.inp)
-- [ModCAB.inp](path/to/ModCAB.inp)
-- [modace.dgm](path/to/modace.dgm)
-- [modace.out](path/to/modace.out)
-- [modcab.dgm](path/to/modcab.dgm)
-- [modhdf.dgm](path/to/modhdf.dgm)
-- [modhdf.out](path/to/modhdf.out)
+- [MODHDF.inp](scripts/MODHDF.inp)
+- [ModACE.inp](scripts/ModACE.inp)
+- [ModCAB.inp](scripts/ModCAB.inp)
+- [modace.dgm](scripts/modace.dgm)
+- [modace.out](scripts/modace.out)
+- [modcab.dgm](scripts/modcab.dgm)
+- [modhdf.dgm](scripts/modhdf.dgm)
+- [modhdf.out](scripts/modhdf.out)
+
