@@ -4,3 +4,15 @@
 This study examined whether nutrition moderates the relationship between adverse childhood experiences (ACEs) and health-related quality of life (HRQOL) among adults. Using structural equation modeling (SEM), results confirmed that ACEs, including child abuse and household dysfunction, were significantly associated with poorer HRQOL. However, nutrition did not significantly moderate these effects. Findings highlight the lasting impact of ACEs on health outcomes and suggest further research is needed to identify effective protective factors.
 
 [📄 View Full Project Report (PDF)](Nutrition-ACE-Qual%20of%20Life-SEM.pdf)
+## Project Files
+
+Here are the key files included in this repository:
+
+- [MODHDF.inp](path/to/MODHDF.inp)
+- [ModACE.inp](path/to/ModACE.inp)
+- [ModCAB.inp](path/to/ModCAB.inp)
+- [modace.dgm](path/to/modace.dgm)
+- [modace.out](path/to/modace.out)
+- [modcab.dgm](path/to/modcab.dgm)
+- [modhdf.dgm](path/to/modhdf.dgm)
+- [modhdf.out](path/to/modhdf.out)
